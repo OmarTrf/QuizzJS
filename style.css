@@ -1,0 +1,133 @@
+*{
+	margin:0;
+	padding: 0;
+	box-sizing: border-box;
+}
+:root{
+	--hue-neutral:200;
+	--hue-wrong :0;
+	--hue-correct:145;
+}
+body{
+	--hue: var(--hue-neutral);
+	padding: 0;
+	margin: 0;
+	display: flex;
+	width: 100vw;
+	height: 100vh;
+	justify-content: center;
+	align-items: center;
+	background-color: hsl(var(--hue),100%,20%);
+}
+body.correct{
+	--hue:var(--hue-correct);
+}
+body.wrong{
+	--hue:var(--hue-wrong);
+}
+.container{
+	width: 800px;
+	max-width: 80%;
+	background-color: #fff;
+	padding: 10px;
+	box-shadow: 0 0 10px 2px;
+}
+.btn-grid{
+	display: grid;
+	grid-template-columns: repeat(2,auto);
+	gap:10px;
+	margin: 20px 0;
+}
+.btn,
+.restart{
+	--hue : var(--hue-neutral);
+	border: 1px solid hsl(var(--hue),100%,30%);
+	background-color: hsl(var(--hue),100%,50%);
+	border-radius: 5px;
+	padding: 5px 10px;
+	color: #fff;
+	font-weight: bold;
+	outline: none;
+	cursor: pointer;
+}
+.restart{
+	padding: 10px 20px;
+	border:2px solid #000;
+	position: absolute;
+	bottom: 10px;
+	left: 50%;
+	transform: translateX(-50%);
+}
+.btn:hover{
+	border-color: #222;
+}
+.btn.correct{
+	--hue:var(--hue-correct);
+	color: #222;
+}
+.btn.wrong{
+	--hue:var(--hue-wrong);
+}
+.start-btn, .next-btn{
+	font-size: 1.5rem;
+	padding: 10px 20px;
+}
+.controls{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+#resultPo,
+#resultNe{
+	width: 500px;
+	height:300px;
+	background: #fff;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%,-50%);
+	text-align: center;
+	line-height: 50px;
+	padding-top: 50px;
+	flex-direction: column;
+	border-radius: 10px;
+	color: #fff;
+	font-size: 1.5rem;
+	font-weight: bold;
+}
+.restart{
+	border-color: #fff;
+}
+#resultPo{
+	color: green!important;
+}
+#resultNe{
+	color: red!important;
+}
+.res{
+	border: 2px solid #fff;
+	color: #fff!important;
+	background: #222!important;
+}
+.res div{
+	border-top-left-radius: 8px;
+	border-top-right-radius: 8px;
+	width: 100%;
+	text-align: left;
+	font-size: 20px;
+	background: #fff;
+	position: absolute;
+	top: 0;
+	left: 0;
+	padding-left: 10px;
+	height:50px;
+}
+.res h1{
+	position: absolute;
+	top: 40%;
+	left: 50%;
+	transform: translate(-50%);
+}
+.hide{
+	display: none;
+}
